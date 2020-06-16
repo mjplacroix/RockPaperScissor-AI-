@@ -23,7 +23,8 @@ while True:
     ret, frame = cap.read()
     cv2.imshow('Get Data : '+label,frame[50:350,100:450])
     if cv2.waitKey(1) & 0xFF == ord(' '):
-        cv2.imwrite(SAVE_PATH+'\\'+label+'{}.jpg'.format(ct),frame[50:350,100:450])
+        # changed the second pixel length from 100:450 (350) to 100:400 (300)
+        cv2.imwrite(SAVE_PATH+'\\'+label+'{}.jpg'.format(ct),frame[50:350,100:400])
         print(SAVE_PATH+'\\'+label+'{}.jpg Captured'.format(ct))
         ct+=1
     if ct >= maxCt:

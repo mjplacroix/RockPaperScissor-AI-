@@ -16,12 +16,16 @@ import os
 import pickle
 import sys
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
 """Preparing our Data"""
 
-DATA_PATH = sys.argv[1] # Path to folder containing data
+# DATA_PATH = sys.argv[1] # Path to folder containing data
+
+PATH = os.getcwd()
+
+DATA_PATH = os.path.join(PATH)
 
 shape_to_label = {'rock':np.array([1.,0.,0.,0.]),'paper':np.array([0.,1.,0.,0.]),'scissor':np.array([0.,0.,1.,0.]),'ok':np.array([0.,0.,0.,1.])}
 arr_to_shape = {np.argmax(shape_to_label[x]):x for x in shape_to_label.keys()}
