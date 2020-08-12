@@ -16,10 +16,10 @@ def updateScore(play,bplay,p,b):
     else:
         return p,b+1
 
-with open('model.json', 'r') as f:
+with open('model_5.json', 'r') as f:
     loaded_model_json = f.read()
 loaded_model = model_from_json(loaded_model_json)
-loaded_model.load_weights("modelweights.h5")
+loaded_model.load_weights("model_5.h5")
 print("Loaded model from disk")
 
 
